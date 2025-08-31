@@ -1,11 +1,12 @@
 # Load packages
 library(tidyverse)
 library(readr)
-
+library(here)
 
 
 # Read CSV from user, omit any rows with NA's in Weekly_Sales or Temperature
-data <- read_csv("/Users/adamestrellado/Downloads/CSVs/Walmart_Sales.csv")
+data <- read_csv(here("data/Walmart.csv")) %>%
+  as_tibble()
 
 
 # Tidying data, remove rows including NA's in Weekly_Sales and Temperature
