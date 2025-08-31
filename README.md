@@ -9,4 +9,8 @@ Used dplyr to clean data.
 
 Used lm() and predict() function to create a model and predict prices.
 
-Created functions new_prediction() and outputPrediction to take user inputs and predict prices.
+Created functions new_prediction() and outputPrediction to take user inputs and predict prices. 
+
+## About the Data 
+This script uses data about Walmart sales from [Kaggle]("https://www.kaggle.com/datasets/yasserh/walmart-dataset?resource=download"). 
+The csv in this repository was last downloaded on 2025-08-30.
