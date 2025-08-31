@@ -14,7 +14,7 @@ data <- read_csv(here("data/Walmart.csv")) %>%
 # Remove outliers
 
 walmartSales <- data %>% 
-  
+  # 
   transmute(sales = Weekly_Sales,
             temp = Temperature) %>% 
   
@@ -56,27 +56,23 @@ predict_sales <- function(input) {
 }
 
 
-# Now we can create a function that asks the user for an input, and then returns a predictied value
+# Now we can create a function that asks the user for an input, and then returns a predicted value
 
 
 # Creates a new function
 new_prediction <- function() {
   input_temp <- as.numeric(readline(prompt = "Enter a temperature between 0 and 100 Fahrenheight:"))
-
-# Returns error if input_temp is not a numeric value
+  # Returns error if input_temp is not a numeric value
   if (is.na(input_temp)) {
     cat("Invalid input, please enter a numeric value. \n")
     return(NULL)
-  }
-
-# Returns error if input_temp is not between 0 and 100
+    }
+  # Returns error if input_temp is not between 0 and 100
   if(input_temp < 0 | input_temp > 100) {
     cat("Invalid input, please enter a temperature between 0 and 100. \n")
     return(NULL)
-  }
-
-# Feeds input_temp into predict_sales(), returns output statement  
+    }
+  # Feeds input_temp into predict_sales(), returns output statement  
   outputPrediction <- predict_sales(input_temp)
-  
   cat("Predicted sales for a temperature ", input_temp, " is $", outputPrediction, "\n")
   }
