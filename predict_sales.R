@@ -27,10 +27,9 @@ walmartSales <- data %>%
   
 
 # Check if sales and temp have a linear relationship
-ggplot(walmartSales,
-       aes(x = temp, y = sales)
-       ) +
-  geom_point() + geom_smooth(se = FALSE)
+ggplot(walmartSales, aes(x = temp, y = sales)) +
+  geom_point() + 
+  geom_smooth(se = FALSE)
 
 
 # As you can see, the regression line is not linear, rather somewhat parabolic
